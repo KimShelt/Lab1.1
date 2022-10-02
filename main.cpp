@@ -7,7 +7,7 @@ using namespace std;
 bool isValid(const wstring& c)
 {
     for(auto a:c)
-        if (!iswalpha(a) || !iswupper(a))
+        if (!isalpha(a) || !isupper(a))
             return false;
     return true;
 }
@@ -41,7 +41,7 @@ int main(int argc, char **argv)
                     wcout<<L"Decrypted text: "<<cipher.decrypt(text)<<endl;
                 }
             } else {
-                wcout<<L"Operation aborted: invalid text\n";
+                wcout<<L"Operation aborted: Invalid text\n";
             }
         }
     } while (pa!=0);
